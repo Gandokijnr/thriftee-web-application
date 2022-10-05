@@ -69,7 +69,7 @@ include_once 'connect.php';
       label: 'ANALYTICS OF YOUR TRANSACTIONS',
       backgroundColor: ['green','yellow','red'],
       borderColor: ['green','yellow','red'],
-      data: [group, personal,loan]
+      data: [personal,group,loan]
     }]
   };
 

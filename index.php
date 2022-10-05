@@ -48,15 +48,12 @@ include_once 'connect.php';
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.4.0
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+
+    </style>
 </head>
 
-<body class="bg-dark text-light">
+<body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
@@ -90,7 +87,7 @@ include_once 'connect.php';
         <li class="nav-item dropdown pe-3">
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <!-- <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle"> -->
             <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo 'HELLO  '. $_SESSION['USERNAME']?></span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -444,11 +441,11 @@ include_once 'connect.php';
                 <div class="activity-item d-flex">
                   <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
                   <div class="activity-content">
-                    <h4 class="text-dark">ThrifTEE was established to avail young professionals, entrepreneurs and SME Owners access to a stream of private funds that would serve as source of credit and investment opportunities even in an unstable economic environment.
+                    <p class="text-dark">ThrifTEE was established to avail young professionals, entrepreneurs and SME Owners access to a stream of private funds that would serve as source of credit and investment opportunities even in an unstable economic environment.
 
                     At your comfort zones, Cloud Cooperative would grant you access to loans with fair interest rates! We want to ease the burden of having to go through traditional banks to access loans.
 
-                    We are targeted at reaching entrepreneurs or individuals who are keen on reaching their personal, economic, academic and social goals through a jointly shared contributions-based scheme.</h4>                  </div>
+                    We are targeted at reaching entrepreneurs or individuals who are keen on reaching their personal, economic, academic and social goals through a jointly shared contributions-based scheme.</p>                  </div>
                 </div><!-- End activity item-->
 
               </div>
@@ -460,7 +457,7 @@ include_once 'connect.php';
           <div class="card">
             <div class="card-body pb-0">
               <h5 class="card-title">ACTIVITIES <span>| LOG</span></h5>
-            <h3 class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet sit numquam tempore dolorum animi nihil molestiae, repudiandae ea cum ipsum fugit saepe atque at vero? Officiis impedit nulla voluptatum quisquam.</h3>
+            <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet sit numquam tempore dolorum animi nihil molestiae, repudiandae ea cum ipsum fugit saepe atque at vero? Officiis impedit nulla voluptatum quisquam.</p>
           </div><!-- End Budget Report -->
 
       </div>

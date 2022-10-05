@@ -61,7 +61,7 @@ include_once 'connect.php';
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.php" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">ThrifTEE </span>
+        <span class="d-none d-lg-block">ThrifTEE</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -199,12 +199,12 @@ include_once 'connect.php';
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Analytics</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-headset"></i><span>Customer Support</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="#">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
+              <i class="bi bi-circle"></i><span>Chat an Agent</span>
             </a>
         </ul>
       </li> 
@@ -393,13 +393,13 @@ include_once 'connect.php';
                                       <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                                   <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                      <img src="assets/img/product-1.jpg" class="d-block w-100" alt="..." style="height: 300px;">
+                                      <img src="assets/img/smile.jpg" class="d-block w-100" alt="..." style="height: 300px;">
                                     </div>
                                     <div class="carousel-item">
-                                      <img src="assets/img/product-2.jpg" class="d-block w-100" alt="..." style="height: 300px;">
+                                      <img src="assets/img/increase chart.jpg" class="d-block w-100" alt="..." style="height: 300px;">
                                     </div>
                                     <div class="carousel-item">
-                                      <img src="assets/img/product-3.jpg" class="d-block w-100" alt="..." style="height: 300px;">
+                                      <img src="assets/img/hand.jpg" class="d-block w-100" alt="..." style="height: 300px;">
                                     </div>
                                   </div>
                                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

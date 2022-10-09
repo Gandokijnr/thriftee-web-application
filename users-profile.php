@@ -228,7 +228,7 @@ include_once 'connect.php';
 
 
 
-                 <?php
+<?php
                 include_once 'connect.php';
 
                 $select = "SELECT * FROM thrift_registration where EMAIL = '$_SESSION[USER_ID]'";
@@ -245,7 +245,7 @@ include_once 'connect.php';
                 $COUNTRY = $row['COUNTRY'];
                 $ADDRESS = $row['ADDRESS'];
 
-                ?>
+?>
 
 
 
@@ -343,7 +343,7 @@ include_once 'connect.php';
                 $ABOUT = "";
                 $fullname = "";
                 
-                if (isset($_POST['submit']) && isset($_FILES['image'])) {
+                if (isset($_POST['submit'])) {
 
                 $phone = mysqli_real_escape_string($connect, $_POST['phone']);
                 $nextofkin = mysqli_real_escape_string($connect, $_POST['nextofkin']);

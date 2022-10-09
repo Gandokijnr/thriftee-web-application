@@ -396,10 +396,11 @@ include_once 'connect.php';
                                       <img src="assets/img/smile.jpg" class="d-block w-100" alt="..." style="height: 300px;">
                                     </div>
                                     <div class="carousel-item">
-                                      <img src="assets/img/increase chart.jpg" class="d-block w-100" alt="..." style="height: 300px;">
+                                      <img src="assets/img/first.jpg" class="d-block w-100" alt="..." style="height: 300px;">
                                     </div>
                                     <div class="carousel-item">
-                                      <img src="assets/img/hand.jpg" class="d-block w-100" alt="..." style="height: 300px;">
+
+                                      <img src="assets/img/dropimage.png" class="d-block w-100" alt="..." style="height: 300px;">
                                     </div>
                                   </div>
                                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -470,12 +471,7 @@ include_once 'connect.php';
     <div class="copyright">
       &copy; Copyright <strong><span>ThrifTEE</span></strong>. All Rights Reserved
     </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-    </div>
+   
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

@@ -88,7 +88,7 @@ if (isset($_POST['submit'])) {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Pages / Contact - NiceAdmin Bootstrap Template</title>
+  <title>Loan Application</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 

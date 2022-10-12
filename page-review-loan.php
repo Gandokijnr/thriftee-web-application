@@ -1,45 +1,9 @@
 <?php
 session_start();
-include 'connect.php';
+include_once 'connect.php';
 
-// fectching data from the database for auto fill
-
-$ID = $_GET['viewid'];
-$getdetails = "SELECT * FROM `thrift_registration` WHERE USER_ID = $ID";
-$result = mysqli_query($connect, $getdetails);
-
-// fectching data from the database for auto fill ends here
-
-$row = mysqli_fetch_assoc($result);
-$FIRSTNAME = $row['FIRSTNAME'];
-$LASTNAME = $row['LASTNAME'];
-$EMAIL = $row['EMAIL'];
-$PHONE_NUMBER = $row['PHONE_NUMBER'];
-$BANK_NAME = $row['BANK_NAME'];
-$ACCOUNT = $row['ACCOUNT_NUMBER'];
-$COUNTRY = $row['COUNTRY'];
-$ADDRESS = $row['ADDRESS'];
-
-
-if (isset($_POST['update'])) {
-
-header('location:admin.php');
-    $FIRSTNAME = $_POST['FIRSTNAME'];
-    $LASTNAME = $_POST['LASTNAME'];
-    $EMAIL = $_POST['EMAIL'];
-    $PHONE_NUMBER = $_POST['PHONE_NUMBER'];
-
-    $sql = "UPDATE thrift_registration SET USER_ID='$_USER',FIRSTNAME='$FIRSTNAME',LASTNAME='$LASTNAME',
-    EMAIL='$EMAIL',USERNAME='',PHONE_NUMBER='$PHONE_NUMBER',NEXT_OF_KIN='',BANK_NAME='',
-    ACCOUNT_NUMBER='',COUNTRY='',ADDRESS='',PROFILE='',PASSWORD='',
-    USER_TYPE='$USERTYPE' WHERE USER_ID = '$_SESSION[USER_ID]'";
-
-     $result = mysqli_query($connect, $sql);
-    
-     
-}
+$response = "";
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +12,7 @@ header('location:admin.php');
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>ADMIN UPDATE PAGE</title>
+  <title>Pages / Contact - NiceAdmin Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -72,16 +36,16 @@ header('location:admin.php');
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  
+ 
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-<header id="header" class="header fixed-top d-flex align-items-center">
+  <header id="header" class="header fixed-top d-flex align-items-center">
 
-  <div class="d-flex align-items-center justify-content-between">
-  <a href="admin.php" class="logo d-flex align-items-center">
+<div class="d-flex align-items-center justify-content-between">
+  <a href="index.php" class="logo d-flex align-items-center">
     <img src="assets/img/logo.png" alt="">
     <span class="d-none d-lg-block">ThrifTEE</span>
   </a>
@@ -89,7 +53,7 @@ header('location:admin.php');
 </div><!-- End Logo -->
 
 <div class="search-bar">
-  <form class="search-form d-flex align-items-center my-5" method="POST" action="#">
+  <form class="search-form d-flex align-items-center" method="POST" action="#">
     <input type="text" name="query" placeholder="Search" title="Enter search keyword">
     <button type="submit" title="Search"><i class="bi bi-search"></i></button>
   </form>
@@ -111,8 +75,7 @@ header('location:admin.php');
     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
         <!-- <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle"> -->
         <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo 'HELLO  '. $_SESSION['USERNAME']?></span>
-      </a>
-      <!-- End Profile Iamge Icon -->
+      </a><!-- End Profile Iamge Icon -->
 
       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
         <li class="dropdown-header">
@@ -124,7 +87,7 @@ header('location:admin.php');
         </li>
 
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="">
+          <a class="dropdown-item d-flex align-items-center" href="users-profile.php">
             <i class="bi bi-person"></i>
             <span>My Profile</span>
           </a>
@@ -134,7 +97,7 @@ header('location:admin.php');
         </li>
 
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="">
+          <a class="dropdown-item d-flex align-items-center" href="users-profile.php">
             <i class="bi bi-gear"></i>
             <span>Account Settings</span>
           </a>
@@ -154,7 +117,7 @@ header('location:admin.php');
         </li>
 
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="admin-logout.php">
+          <a class="dropdown-item d-flex align-items-center" href="logout.php">
             <i class="bi bi-box-arrow-right"></i>
             <span>Sign Out</span>
           </a>
@@ -174,7 +137,7 @@ header('location:admin.php');
 <ul class="sidebar-nav" id="sidebar-nav">
 
   <li class="nav-item">
-    <a class="nav-link" href="admin.php">
+    <a class="nav-link " href="index.php">
       <i class="bi bi-grid"></i>
       <span>Dashboard</span>
     </a>
@@ -185,18 +148,18 @@ header('location:admin.php');
 
   <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-      <i class="bi bi-menu-button-wide"></i><span>User Activities</span><i class="bi bi-chevron-down ms-auto"></i>
+      <i class="bi bi-menu-button-wide"></i><span>Service</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="group-members.php">
-          <i class="bi bi-circle"></i><span>Group Members</span>
+        <a href="contribution.php">
+          <i class="bi bi-circle"></i><span>Join Group</span>
         </a>
       </li>
 
       <li>
-        <a href="personal-savings-plan-list.php">
-          <i class="bi bi-circle"></i><span>Individual Savers</span>
+        <a href="page-personal-saving.php">
+          <i class="bi bi-circle"></i><span>Personal Savings</span>
         </a>
       </li>
 
@@ -206,12 +169,12 @@ header('location:admin.php');
 
   <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-      <i class="bi bi-journal-text"></i><span>Loan Apllicant</span><i class="bi bi-chevron-down ms-auto"></i>
+      <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="loan-list.php">
-          <i class="bi bi-circle"></i><span>View List</span>
+        <a href="page-loan.php">
+          <i class="bi bi-circle"></i><span>Loan Form</span>
         </a>
       </li>
     </ul>
@@ -220,13 +183,28 @@ header('location:admin.php');
   <!-- End Forms Nav -->
 
 
- 
+  <li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-headset"></i><span>Customer Support</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+      <li>
+        <a href="#">
+          <i class="bi bi-circle"></i><span>Chat an Agent</span>
+        </a>
+    </ul>
+  </li> 
   <!-- End Charts Nav -->
 
 
   <li class="nav-heading">Pages</li>
 
- <!-- End Profile Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="users-profile.php">
+      <i class="bi bi-person"></i>
+      <span>Profile</span>
+    </a>
+  </li><!-- End Profile Page Nav -->
 
 
 </ul>
@@ -234,67 +212,85 @@ header('location:admin.php');
 </aside><!-- End Sidebar-->
 
 
-  <main id="main" class="main">
+
+<main id="main" class="main">
+    
   
-  <div class="container-fluid px-4">
-                        <h1 class="mt-4">REGISTERED USER</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                        </ol>
+
+<section class="section my-5">
+    
+  <div class="row">
+    <div class="col-lg">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">LOAN STATUS <span class="text-danger"> (NOTIFICATION)</span></h5>
+
+          <!-- Default Table -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">FULLNAME</th>
+                <th scope="col">PHONE NUMBER</th>
+                <th scope="col">AMOUNT</th>
+                <th scope="col">STATUS</th>
+              </tr>
+            </thead>
+
+            <?php
+        $daily_contribution = "SELECT * FROM thrift_loan WHERE EMAIL = '$_SESSION[USER_ID]'";
+        $check = mysqli_query($connect,$daily_contribution);
+       
+        while ($row = mysqli_fetch_array($check)) {
+        $concat = $row['FIRSTNAME']. " " .$row['LASTNAME'];
+            $phone_number = $row['PHONE_NUMBER'];
+            $amount = $row['AMOUNT'];
+            $status = $row['STATUS'];
+            
+            
+                echo '<tbody>
+                <tr>
+                <td>'.$concat.'</td>
+                <td>'.$phone_number.'</td>
+                <td>'.$amount.'</td>
+                <td>'.$status.'</td>
+              </tr>
+              </tbody>';
+                 }
+            
+        
+        
+
+
+
 
     
-                       
-                                <form method="post">
-                                <div class="form-group">
-                                    <label>FIRSTNAME:</label>
-                                    <input type="text" class="form-control" value="<?php echo $FIRSTNAME  ?>" name="FIRSTNAME" placeholder="Enter Name">
-                              
-                                    <label>LASTNAME:</label>
-                                    <input type="text" class="form-control" value="<?php echo $LASTNAME  ?>" name="FIRSTNAME" placeholder="Enter Name">
-                              
+      ?>
+              
+          
+            
+          </table>
+          <!-- End Default Table Example -->
+        </div>
+      </div>
 
-                                
+    
+    </div>
+  </div>
+</section>
 
-                                    <label>EMAIL:</label>
-                                    <input type="email" class="form-control" name="EMAIL" value="<?php echo $EMAIL  ?>"  placeholder="Enter Your Address">
-                                    <br>
-                                    <label>PHONE NUMBER:</label>
-                                    <input type="number" class="form-control" name="PHONE_NUMBER" value="<?php echo $PHONE_NUMBER  ?>" placeholder="+234">
-                                    <br>
-                                    <label>BANK NAME:</label>
-                                    <input type="text" class="form-control" name="BANK_NAME" value="<?php echo $BANK_NAME  ?>" placeholder="">
-                                    <br>
-                                    <label>ACCOUNT NUMBER:</label>
-                                    <input type="text" class="form-control" name="" value="<?php echo $ACCOUNT  ?>" placeholder="">
-                                    <br>
-                                    <label>COUNTRY:</label>
-                                    <input type="text" class="form-control" name="" value="<?php echo $COUNTRY  ?>" placeholder="">
-                                    <br>
-                                    <label>ADDRESS:</label>
-                                    <input type="text" class="form-control" name="" value="<?php echo $ADDRESS  ?>" placeholder="">
-                                    <br>
-
-
-
-                            
-
-                          
-                                    
-                                </div>
-                                
-                                
-                                <!-- <button type="submit" class="btn btn-primary" name="update">Submit</button> -->
-
-
-  </main><!-- End #main -->
-
+</main><!-- End #main -->
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>ThrifTEE</span></strong>. All Rights Reserved
+    
+    <div class="credits">
+    
+
+
     </div>
   </footer><!-- End Footer -->
 
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -308,7 +304,13 @@ header('location:admin.php');
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+<script>
+  function calc_collectable(){
+    var amount = document.getElementById('amount').value;
+    var value = (amount * 10);
+document.getElementById('collectable').value = value;
+  }
+</script>
 </body>
 
 </html>

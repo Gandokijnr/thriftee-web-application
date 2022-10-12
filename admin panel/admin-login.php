@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
                 <div class="card-body bg-dark text-light">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">ADMIN LOGIN</h5>
+                    <h5 class="card-title text-center pb-0 fs-4 text-light">ADMIN LOGIN</h5>
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
 

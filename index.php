@@ -191,6 +191,11 @@ include_once 'connect.php';
               <i class="bi bi-circle"></i><span>Loan Form</span>
             </a>
           </li>
+          <li>
+            <a href="page-review-loan.php">
+              <i class="bi bi-circle"></i><span>Loan Review</span>
+            </a>
+          </li>
         </ul>
       </li>
       

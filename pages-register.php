@@ -33,20 +33,7 @@ if ($result) {
 }
 }
   
-//   $sql = "SELECT * FROM thrift_registration";
 
-//   $select = mysqli_query($connect, $sql);
-
-//   if (mysqli_num_rows($select) > 0) {
-    
-//       $msg = "<div class='alert alert-danger' role='alert'>
-//              User  Already Have an Account, Proceed to Login
-//             </div>";
-//   }else {
-//     header('location:pages-login.php');
-//     $insert = "INSERT INTO thrift_registration(USER_ID, FIRSTNAME, LASTNAME, 
-//     EMAIL, USERNAME, PASSWORD) VALUES ('','$firstname','$lastname','$email','$username','$password')";
-// }
 }
 
 ?>
@@ -83,12 +70,7 @@ if ($result) {
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.4.0
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
 </head>
 
 <body>

@@ -417,7 +417,7 @@ if (isset($_POST['submit'])) {
                                                 <td>'.$PHONE_NUMBER.'</td>
                                                 <td>
                                                
-                                                <button class="btn btn-danger" onclick("are you sure you want to delete user?")><a href="admin-delete-group.php?deleteid='.$ID.'" class="text-light"><i class="fa-solid fa-trash"></i></a></button>
+                                                <button class="btn btn-danger" onclick("are you sure you want to delete user?")><a href="delete-group-page.php?deleteid='.$ID.'" class="text-light"><i class="fa-solid fa-trash"></i></a></button>
                                                 </td>
                                             </tr>
                                         </tbody>';

@@ -414,8 +414,8 @@ if (isset($_POST['submit'])) {
                                                 <td style="display: block; width: 300px; overflow-x:">'.$COMMENT.'</td>
                                                 <td>
                                                 
-                                                <button class="btn btn-danger" onclick("are you sure you want to delete user?")><a href="admin-loan-list-delete.php?deleteid='.$ID.'" class="text-light"><i class="fa-solid fa-trash"></i></a></button>
-                                                <button class="btn btn-primary" onclick("are you sure you want to delete user?")><a href="admin-delete.php?deleteid='.$ID.'" class="text-light"><i class="fa-solid fa-trash"></i></a></button>
+                                                <button class="btn btn-danger"><a href="admin-loan-list-delete.php?deleteid='.$ID.'" class="text-light"><i class="fa-solid fa-trash"></i></a></button>
+                                                <button class="btn btn-primary"><a href="admin-loan-view.php?loanviewid='.$ID.'" class="text-light"><i class="bi bi-binoculars-fill"></i></button>
                                                 </td>
                                                 
                                             </tr>
